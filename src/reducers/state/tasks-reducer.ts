@@ -86,6 +86,7 @@ export const tasksReducer = (state = initialState, action: ActionsType): TaskSta
             if (task) {
                 task.isDone = action.isDone
             }
+            state[action.todoListID] = [...todoListTasks]
             return {
                 ...state,
                 [action.todoListID]: state[action.todoListID].map(task => {
@@ -105,6 +106,7 @@ export const tasksReducer = (state = initialState, action: ActionsType): TaskSta
             if (task) {
                 task.title = action.title
             }
+            state[action.title] = [...todoListTasks]
             return {
                 ...state,
                 [action.todoListID]: state[action.todoListID].map(task => {
