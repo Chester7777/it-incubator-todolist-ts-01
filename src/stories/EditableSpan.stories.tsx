@@ -7,10 +7,13 @@ export default {
     title: 'TODOLISTS/EditableSpan',
     component: EditableSpan,
     argTypes: {
-        value: {
-          defaultValue: "React"
+        onChange: {
+            description: 'Value EditableSpan changed'
         },
-        backgroundColor: { control: 'color' },
+        value: {
+          defaultValue: 'React',
+            description: 'Start value EditableSpan'
+        },
     },
 } as Meta;
 
@@ -19,11 +22,11 @@ const Template: Story<EditableSpanPropsType> = (args) => <EditableSpan {...args}
 
 export const EditableSpanStories = Template.bind({});
 EditableSpanStories.args = {
-    changeItem: action("Value changed")
+    changeItem: action("Value EditableSpan changed")
 }
 export const EditableSpanNewStories = Template.bind({});
 EditableSpanNewStories.args = {
-    changeItem: action("Value changed")
+    changeItem: action("Value EditableSpan changed")
 }
 
 
